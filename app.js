@@ -58,7 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //Unprotected routes
-app.use('/index', indexRouter);
+app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/details', detailsRouter);
 app.use('/login', login);
