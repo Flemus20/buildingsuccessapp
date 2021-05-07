@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Attach Accessory</title>
+   <link rel='stylesheet' type = "text/css" href='/stylesheets/site.css' />
+   <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <ul>
+        <li><img class="logo" src="/images/logo.png"></li>
+        <li><a href="/">Browse</a></li>
+        <li><a href="/create">Create a Block</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/createAccessory">Create Block Accessory</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+    <main>
+      <h1>Attach an Additional Truth</h1>
+      <div class="form">
+        <h2>{{cube.name}}</h2>
+        <img class="cube" src={{cube.imageUrl}}>
+        
+
+        {{#if accessories}}
+        <form action='/attachAccessory/{{cube._id}}' method="post">
+          <label for="accessory" class="form-label">Available Additional Truths</label>
+          <select id="accessory" name="accessory" class="form-control mb-3">
+            {{#each accessories}}
+          <option value="{{id}}">{{name}}</option>
+            {{/each}}
+      
+          </select>
+          <input type="submit" value="Attach" class="btn btn-warning">
+        </form>
+        {{else}}
+        <h3 class="italic">There are no available additional truths added so far so there is none available to add...
+        </h3>
+        {{/if}}
+
+
+        <a class="btn" href="/">Back</a>
+      </div>
+    </main>
+  </div>
+  <footer>@BuildingSuccess: Exercise for Express.js and Handlebars</footer>
+
+</body>
+
+</html>

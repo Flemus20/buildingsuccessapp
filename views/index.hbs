@@ -1,0 +1,45 @@
+<body>
+  
+  <div class="container">
+    <header>
+      <ul>
+        <li><img class="logo" src="/images/logo.png"></li>
+        <li><a href="/">Browse</a></li>
+        <li><a href="/create">Create a Block</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/createAccessory">Create Block Accessory</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+    <main>
+      <h1>Building success one block at a time</h1>
+      <h1></h1>
+      {{#each cube}}
+        <div class="cube">
+          <img class="cube" src="{{imageUrl}}">
+          <p class="name">{{name}}</p>
+          <a class="btn" href="/details/{{_id}}">Explanation</a>
+          <a class="btn" href="/attachAccessory/{{_id}}">Attach Additional Truth</a>
+        </div>
+      
+      {{else}}
+        <h2> No Blocks found</h2>
+      {{/each}}
+
+      
+    </main>
+  </div>
+  <footer>@BuildingSuccess: Exercise for Express.js and Handlebars</footer>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' type = "text/css" href='/stylesheets/site.css' />
+  </head>
+  <body>
+    {{{body}}}
+  </body>
+</html>

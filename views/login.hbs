@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel='stylesheet' type = "text/css" href='/stylesheets/site.css' />
+  <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <ul>
+        <li><img class="logo" src="/images/logo.png"></li>
+        <li><a href="/">Browse</a></li>
+        <li><a href="/create">Create a Block</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/createAccessory">Create Block Accessory</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+    <main>
+      <h2>
+    {{#if error}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Not Authorized to go there! Please log in</strong>
+    {{/if}}
+      </h2>
+
+
+	<h1>Login Form</h1>
+<div class="form">
+    <form action='/login' method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Login">
+    </form>
+</div>
+    
+    {{#if alert}}
+    <div  class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Login failed! Check Authentication credentials</strong>
+    {{/if}}
+    
+    
+    
+    
+    
+    </main>
+  </div>
+  <footer>@BuildingSuccess: Exercise for Express.js and Handlebars</footer>
+
+</body>
+
+</html>

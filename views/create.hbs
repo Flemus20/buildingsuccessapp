@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Create Cube Page</title>
+  <link rel='stylesheet' type = "text/css" href='/stylesheets/site.css' />
+  <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <ul>
+        <li><img class="logo" src="/images/logo.png"></li>
+        <li><a href="/">Browse</a></li>
+        <li><a href="/create">Create a Block</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/createAccessory">Create Block Accessory</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+    <main>
+      <h1>Create a Block</h1>
+      <div class="form">
+        <form action='/create' method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name">
+          <label for="name">Description</label>
+          <textarea id="name" name="description"></textarea>
+          <label for="image">ImageUrl</label>
+          <input type="text" id="image" name="imageUrl">
+          <input type="submit" value="Create">
+        </form>
+
+        {{#if alert}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Please correct input fields!</strong>
+    <strong>Should consist only with English letters, digits and whitespaces</strong> 
+    <strong>Name should be at least 5 characters long</strong>
+    <strong>Description should be at least 20 characters long, </strong>
+    <strong>and imageUrl must start with "http://" or "https://".</strong>
+    {{/if}}
+
+
+
+
+
+      </div>
+    </main>
+  </div>
+  <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+
+</body>
+
+</html>
